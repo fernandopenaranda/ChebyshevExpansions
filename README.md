@@ -36,6 +36,7 @@ Although, currently not implemented KPM momenta from `momentaKPM` can be used as
 System size: D = dim(h) = 1e6
 Resource consumption: 28.73 k allocations: 702.757 MiB
 
+![](https://i.imgur.com/5SlAYmE.png)
 
 ## References  
     
