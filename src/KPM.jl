@@ -123,7 +123,7 @@ julia> momentaKPM(h, bandrange = (-6,6)).mulist |> length
 11
 ```
 """
-function momentaKPM(h, A = I, ket = 1<:Union{Int, AbstractArray}; order = 10, bandrange = missing, flat = Val(false))
+function momentaKPM(h, A = I, ket = 1 <:Union{Int, AbstractArray}; order = 10, bandrange = missing, flat = Val(false))
     println(ket)
     if isa(typeof(ket), Int) 
         builder = KPMBuilder(h, A, randomkets(eltype(h), eltype(A), size(h,1), ket),
