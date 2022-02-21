@@ -294,8 +294,8 @@ dosKPM(μ::MomentaKPM; resolution = 2) = real.(densityKPM(μ; resolution = resol
 """
     densityKPM(h::Hamiltonian, A; resolution = 2, kets = randomkets(1), kw...)
 
-Compute, using the Kernel Polynomial Method (KPM), the local density of states `ρₖ(ϵ) =
-⟨k|δ(ϵ-h)|k⟩` for a single ket `|k⟩`, a collection of `{|k_i⟩}`, or a set of randomly-
+Compute, using the Kernel Polynomial Method (KPM), the spectral density of `A`, `ρᴬₖ(ϵ) =
+⟨k|A δ(ϵ-h)|k⟩` for a single ket `|k⟩`, a collection of `{|k_i⟩}`, or a set of randomly-
 generated kets for a stochastic trace calculation(see `momentaKPM`).
 
 The result is a tuple of energy points `ϵᵢ::Vector` spanning the band  range, and real 
