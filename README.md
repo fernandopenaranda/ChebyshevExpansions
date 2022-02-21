@@ -21,7 +21,7 @@ Currently, given a hamiltonian matrix, <img src="https://latex.codecogs.com/svg.
 * Calculation of spectral densities of an operator <img src="https://latex.codecogs.com/svg.image?A(E)&space;=&space;\text{Tr}&space;[A&space;\delta(E-H)]" title="A(E) = \text{Tr} [A \delta(E-H)]" />.
 * Calculation of thermal averages, i.e. <img src="https://latex.codecogs.com/svg.image?\langle&space;A\rangle&space;_{E_F}&space;=&space;\text{Tr}&space;[A&space;f(H,E_F)]" title="\langle A\rangle _{E_F} = \text{Tr} [A f(H,E_F)]" />.
 
-Although, currently not implemented KPM momenta from `momentaKPM` can be used as the basis for a Chebyshev expansion of many interesting functions and observables such as correlation (Green's) functions, optical conductivities[1], equilibrium supercurrents[2]... 
+Although, not currently implemented, KPM momenta from `momentaKPM` can be used as the basis for a Chebyshev expansion of many interesting functions and observables such as correlation (Green's) functions, optical conductivities[1], equilibrium supercurrents[2]... 
 ## Exported functions
 `randomkets, momentaKPM, densityKPM, dosKPM, averageKPM`
 1. `randomkets` generates a collection of random kets for stochastic trace estimation
