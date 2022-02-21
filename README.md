@@ -1,11 +1,3 @@
-# ChebyshevExpansions
-
-[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://fernandopenaranda.github.io/ChebyshevExpansions.jl/stable)
-[![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://fernandopenaranda.github.io/ChebyshevExpansions.jl/dev)
-[![Build Status](https://github.com/fernandopenaranda/ChebyshevExpansions.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/fernandopenaranda/ChebyshevExpansions.jl/actions/workflows/CI.yml?query=branch%3Amain)
-[![Coverage](https://codecov.io/gh/fernandopenaranda/ChebyshevExpansions.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/fernandopenaranda/ChebyshevExpansions.jl)
-
-
 # ChebyExpansions.jl
 ## Introduction
 In this package, we implement the Kernel Polynomial Method (KPM) in Julia, an efficient technique to compute spectral and correlation functions using order-N Chebyshev expansions of said quantities. 
@@ -32,7 +24,7 @@ Currently, given a hamiltonian matrix, $H$ and a generic operator $A$ the follow
 `momentaKPM`
 `dosKPM` computes the density of states $(A == I)$
 `densityKPM` 
-`averageKPM` 
+`averageKPM()` Finite temperature `kBT != 0`is not yet implemented.  
 ## References  
     
 [1] A. Weiße, G. Wellein, A. Alvermann, and H. Fehske, *The
