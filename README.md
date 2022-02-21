@@ -30,6 +30,13 @@ Although, currently not implemented KPM momenta from `momentaKPM` can be used as
 4. `dosKPM` computes the density of states of `h::AbstractMatrix`. Note that <img src="https://latex.codecogs.com/svg.image?(A&space;==&space;I)" title="(A == I)" />
 5. `averageKPM()` Thermal average KPM calculation of `A` given `h`. Finite temperature `kBT != 0`is not yet implemented.  
 
+## Gallery
+### Density of states of a graphene flake
+
+System size: D = dim(h) = 1e6
+Resource consumption: 28.73 k allocations: 702.757 MiB
+
+
 ## References  
     
 [1] A. Weiße, G. Wellein, A. Alvermann, and H. Fehske, *The
