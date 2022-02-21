@@ -12,7 +12,7 @@ In addition, KPM offers some advantages in terms of stability and resource consu
 
 1. The energy resolution is controlled by the ratio <img src="https://latex.codecogs.com/svg.image?W/N" /> , where <img src="https://latex.codecogs.com/svg.image?W" />  is the bandwidth of <img src="https://latex.codecogs.com/svg.image?H" />  and <img src="https://latex.codecogs.com/svg.image?N" />  the expansion order. The complexity for sparse matrices goes like <img src="https://latex.codecogs.com/svg.image?\mathcal{O}(ND)" title="\mathcal{O}(ND)" />
 2. The error in the stochastic trace estimation <img src="https://latex.codecogs.com/svg.image?&space;\mathcal{O}(1/\sqrt{DR})" title=" \mathcal{O}(1/\sqrt{DR})" />, being <img src="https://latex.codecogs.com/svg.image?R" /> the number of random kets considered.
-3. For sparse matrices (the usual scenario) `h` and `A` should be `AbstractSparseMatrix` the preferred type (although it is not required).
+3. For sparse matrices (the usual scenario), the preferred type of `h` and `A` matrices should be `AbstractSparseMatrix` (although it is not required).
 ## Observables 
 
 Currently, given a hamiltonian matrix, <img src="https://latex.codecogs.com/svg.image?H" /> and a generic operator <img src="https://latex.codecogs.com/svg.image?A" /> the following methods are implemented:
