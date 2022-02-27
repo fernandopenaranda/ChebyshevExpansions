@@ -15,8 +15,7 @@ where the sum is taken over the `n` random kets `|ket⟩` of norm `1/√n` produ
 `randomkets`, and `N₀` is the total number of orbitals in the full unit cell.
 
 By default when applied to a multiorbital system with a maximum of `N` orbitals per site, 
-the generated kets have independent, complex, normally-distributed random components 
-
+the generated kets have independent, complex, normally-distributed random components.
 """
 function randomkets(h, A, n)
     dim = size(h,1)
@@ -260,7 +259,7 @@ end
 # Kernel Polynomial Method : observables
 #######################################################################
 """
-    dosKPM(h::Hamiltonian; resolution = 2, kets = randomkets(1), kw...)
+    dosKPM(h::AbstractMatrix; resolution = 2, kets = randomkets(1), kw...)
 
 Compute, using the Kernel Polynomial Method (KPM), the local density of states `ρₖ(ϵ) =
 ⟨k|δ(ϵ-h)|k⟩` for a single ket `|k⟩`, a collection of `{|k_i⟩}`, or a set of randomly-
@@ -292,7 +291,7 @@ dosKPM(h; resolution = 2, kets = randomkets(h, I, 1), kw...) =
 dosKPM(μ::MomentaKPM; resolution = 2) = real.(densityKPM(μ; resolution = resolution))
 
 """
-    densityKPM(h::Hamiltonian, A; resolution = 2, kets = randomkets(1), kw...)
+    densityKPM(h::AbstractMatrix, A; resolution = 2, kets = randomkets(1), kw...)
 
 Compute, using the Kernel Polynomial Method (KPM), the spectral density of `A`, `ρᴬₖ(ϵ) =
 ⟨k|A δ(ϵ-h)|k⟩` for a single ket `|k⟩`, a collection of `{|k_i⟩}`, or a set of randomly-
@@ -331,7 +330,7 @@ function densityKPM(momenta::MomentaKPM{T}; resolution = 2) where {T}
 end
 
 """
-    `averageKPM(h::Hamiltonian, A; kBT = 0, Ef = 0, kw...)`
+    `averageKPM(h::AbstractMatrix, A; kBT = 0, Ef = 0, kw...)`
 
 Compute, using the Kernel Polynomial Method (KPM), the thermal expectation value `⟨A⟩ = Σ_k
 f(E_k) ⟨k|A|k⟩ = ∫dE f(E) Tr [A δ(E-H)]/N₀ = Tr [A f(H)]/N₀` for a given hermitian operator

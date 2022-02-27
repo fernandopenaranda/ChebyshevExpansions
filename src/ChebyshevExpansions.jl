@@ -6,4 +6,3 @@ module ChebyshevExpansions
     #export momentaKPM, densityKPM, dosKPM, averageKPM
     include("KPM.jl")    
 end
-
