@@ -2,7 +2,7 @@
 # randomkets
 #######################################################################
 """
-    randomkets(h, A, n)
+    `randomkets(h, A, n)`
 
 Creates `n` random vectors with length `D = dim(h)` and stacks them into a `D×n` matrix.
 The resulting ket amplitudes are normalized by `1/√n`.
@@ -16,7 +16,13 @@ where the sum is taken over the `n` random kets `|ket⟩` of norm `1/√n` produ
 
 By default when applied to a multiorbital system with a maximum of `N` orbitals per site, 
 the generated kets have independent, complex, normally-distributed random components.
+
+    `randomkets(h, n) = randomkets(h, I, n)`
+
+useful for dosKPM
 """
+randomkets(h, n) = randomkets(h, I, n)
+
 function randomkets(h, A, n)
     dim = size(h,1)
     rkets = zeros(promote_type(eltype(h), eltype(A)), dim, n)
@@ -259,7 +265,7 @@ end
 # Kernel Polynomial Method : observables
 #######################################################################
 """
-    dosKPM(h::AbstractMatrix; resolution = 2, kets = randomkets(1), kw...)
+    dosKPM(h::AbstractMatrix; resolution = 2, kets = randomkets(h, 1), kw...)
 
 Compute, using the Kernel Polynomial Method (KPM), the local density of states `ρₖ(ϵ) =
 ⟨k|δ(ϵ-h)|k⟩` for a single ket `|k⟩`, a collection of `{|k_i⟩}`, or a set of randomly-
@@ -270,7 +276,7 @@ and real `ρₖ(ϵᵢ)::Vector` values (any residual imaginary part in `ρₖ` i
 number of energy points `ϵᵢ` is `order * resolution`, rounded to the closest integer.
 
 If `kets` contains more than a single ket, the sum `∑ₖρₖ(ε)` over all models will be
-computed. In the case of the default `kets = randomkets(h, I, n)`, this results in an
+computed. In the case of the default `kets = randomkets(h, n)`, this results in an
 estimate of the total density of states per orbital, computed through an stochastic trace, 
 `ρ(ϵ) = ∑ₖ⟨k|δ(ϵ-h)|k⟩/n ≈ Tr[δ(ϵ-h)]/N₀`, where `N₀` is the total number of orbitals in the
 unit cell.
@@ -285,7 +291,7 @@ Same as above with KPM momenta `μ` as input.
 # See also
     `momentaKPM`, `densityKPM`, `averageKPM`
 """
-dosKPM(h; resolution = 2, kets = randomkets(h, I, 1), kw...) =
+dosKPM(h; resolution = 2, kets = randomkets(h, 1), kw...) =
     dosKPM(momentaKPM(h, I; kets = kets, kw...), resolution = resolution)
 
 dosKPM(μ::MomentaKPM; resolution = 2) = real.(densityKPM(μ; resolution = resolution))
