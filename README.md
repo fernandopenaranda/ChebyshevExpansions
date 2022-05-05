@@ -1,4 +1,7 @@
 # ChebyExpansions.jl
+<a href="https://doi.org/10.5281/zenodo.6521856"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.6521856.svg" alt="DOI"></a>
+
+Authors: Fernando Peñaranda, Pablo San-Jose.
 ## Introduction
 In this package, we implement the [Kernel Polynomial Method (KPM)](https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.78.275) [1] in Julia, an efficient technique to compute spectral and correlation functions using order-N Chebyshev expansions of said quantities. 
 
